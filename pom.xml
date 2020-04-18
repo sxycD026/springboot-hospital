@@ -68,6 +68,4 @@
             <artifactId>maven-repository</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>

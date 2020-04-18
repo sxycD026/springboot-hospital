@@ -3,6 +3,14 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/springboot-hospital-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/application-dev.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/application-prod.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/application.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/mapper/AccountInfoVoMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/mapper/AlterationInfoVoMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/mapper/BranchInfoVoMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/mapper/RoleInfoMapper.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-hospital-dao/src/main/resources/mapper/UserInfoVoMapper.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-hospital-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-hospital-web/src/main/java" charset="UTF-8" />
   </component>

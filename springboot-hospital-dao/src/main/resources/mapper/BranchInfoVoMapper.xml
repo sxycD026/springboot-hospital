@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyoung.hospital.dao.module.mapper.BranchInfoVoMapper">
+  <resultMap id="BaseResultMap" type="com.xyoung.hospital.dao.module.vo.BranchInfoVo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="BranchCode" jdbcType="VARCHAR" property="branchCode" />
+    <result column="BranchName" jdbcType="VARCHAR" property="branchName" />
+    <result column="BranchFullName" jdbcType="VARCHAR" property="branchFullName" />
+    <result column="SystemCode" jdbcType="VARCHAR" property="systemCode" />
+    <result column="UpBranchCode" jdbcType="VARCHAR" property="upBranchCode" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="ModifyTime" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, BranchCode, BranchName, BranchFullName, SystemCode, UpBranchCode, Status, CreateTime, 
+    ModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from branch_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from branch_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xyoung.hospital.dao.module.vo.BranchInfoVo">
+    insert into branch_info (id, BranchCode, BranchName, 
+      BranchFullName, SystemCode, UpBranchCode, 
+      Status, CreateTime, ModifyTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{branchCode,jdbcType=VARCHAR}, #{branchName,jdbcType=VARCHAR}, 
+      #{branchFullName,jdbcType=VARCHAR}, #{systemCode,jdbcType=VARCHAR}, #{upBranchCode,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyoung.hospital.dao.module.vo.BranchInfoVo">
+    insert into branch_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="branchCode != null">
+        BranchCode,
+      </if>
+      <if test="branchName != null">
+        BranchName,
+      </if>
+      <if test="branchFullName != null">
+        BranchFullName,
+      </if>
+      <if test="systemCode != null">
+        SystemCode,
+      </if>
+      <if test="upBranchCode != null">
+        UpBranchCode,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="modifyTime != null">
+        ModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="branchCode != null">
+        #{branchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="branchFullName != null">
+        #{branchFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="systemCode != null">
+        #{systemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="upBranchCode != null">
+        #{upBranchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyoung.hospital.dao.module.vo.BranchInfoVo">
+    update branch_info
+    <set>
+      <if test="branchCode != null">
+        BranchCode = #{branchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="branchName != null">
+        BranchName = #{branchName,jdbcType=VARCHAR},
+      </if>
+      <if test="branchFullName != null">
+        BranchFullName = #{branchFullName,jdbcType=VARCHAR},
+      </if>
+      <if test="systemCode != null">
+        SystemCode = #{systemCode,jdbcType=VARCHAR},
+      </if>
+      <if test="upBranchCode != null">
+        UpBranchCode = #{upBranchCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        ModifyTime = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyoung.hospital.dao.module.vo.BranchInfoVo">
+    update branch_info
+    set BranchCode = #{branchCode,jdbcType=VARCHAR},
+      BranchName = #{branchName,jdbcType=VARCHAR},
+      BranchFullName = #{branchFullName,jdbcType=VARCHAR},
+      SystemCode = #{systemCode,jdbcType=VARCHAR},
+      UpBranchCode = #{upBranchCode,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      ModifyTime = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

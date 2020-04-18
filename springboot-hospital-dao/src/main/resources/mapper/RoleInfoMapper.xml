@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyoung.hospital.dao.module.mapper.RoleInfoMapper">
+  <resultMap id="BaseResultMap" type="com.xyoung.hospital.dao.module.vo.RoleInfo">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="RoleCode" jdbcType="VARCHAR" property="roleCode" />
+    <result column="RoleName" jdbcType="VARCHAR" property="roleName" />
+    <result column="UpRoleCode" jdbcType="VARCHAR" property="upRoleCode" />
+    <result column="Status" jdbcType="INTEGER" property="status" />
+    <result column="CreateTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="ModifyTime" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, RoleCode, RoleName, UpRoleCode, Status, CreateTime, ModifyTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from role_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from role_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xyoung.hospital.dao.module.vo.RoleInfo">
+    insert into role_info (id, RoleCode, RoleName, 
+      UpRoleCode, Status, CreateTime, 
+      ModifyTime)
+    values (#{id,jdbcType=INTEGER}, #{roleCode,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, 
+      #{upRoleCode,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xyoung.hospital.dao.module.vo.RoleInfo">
+    insert into role_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="roleCode != null">
+        RoleCode,
+      </if>
+      <if test="roleName != null">
+        RoleName,
+      </if>
+      <if test="upRoleCode != null">
+        UpRoleCode,
+      </if>
+      <if test="status != null">
+        Status,
+      </if>
+      <if test="createTime != null">
+        CreateTime,
+      </if>
+      <if test="modifyTime != null">
+        ModifyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="roleCode != null">
+        #{roleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null">
+        #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="upRoleCode != null">
+        #{upRoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xyoung.hospital.dao.module.vo.RoleInfo">
+    update role_info
+    <set>
+      <if test="roleCode != null">
+        RoleCode = #{roleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleName != null">
+        RoleName = #{roleName,jdbcType=VARCHAR},
+      </if>
+      <if test="upRoleCode != null">
+        UpRoleCode = #{upRoleCode,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        Status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        ModifyTime = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xyoung.hospital.dao.module.vo.RoleInfo">
+    update role_info
+    set RoleCode = #{roleCode,jdbcType=VARCHAR},
+      RoleName = #{roleName,jdbcType=VARCHAR},
+      UpRoleCode = #{upRoleCode,jdbcType=VARCHAR},
+      Status = #{status,jdbcType=INTEGER},
+      CreateTime = #{createTime,jdbcType=TIMESTAMP},
+      ModifyTime = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
