@@ -6,8 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="springboot-hospital" />
+        <module name="springboot-hospital-service" />
+        <module name="springboot-hospital-common" />
+        <module name="springboot-hospital-web" />
+        <module name="springboot-hospital-dao" />
       </profile>
     </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-hospital-common" options="-parameters" />
+      <module name="springboot-hospital-dao" options="-parameters" />
+      <module name="springboot-hospital-service" options="-parameters" />
+      <module name="springboot-hospital-web" options="-parameters" />
+    </option>
   </component>
 </project>

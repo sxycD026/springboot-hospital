@@ -4,9 +4,70 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.xyoung</groupId>
     <artifactId>springboot-hospital</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <modules>
+        <module>springboot-hospital-common</module>
+        <module>springboot-hospital-service</module>
+        <module>springboot-hospital-dao</module>
+        <module>springboot-hospital-web</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.xyoung</groupId>
+                <artifactId>springboot-hospital-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xyoung</groupId>
+                <artifactId>springboot-hospital-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+          <dependency>
+                <groupId>com.xyoung</groupId>
+                <artifactId>springboot-hospital-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+           <dependency>
+                <groupId>com.xyoung</groupId>
+                <artifactId>springboot-hospital-dao</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xyoung</groupId>
+                <artifactId>maven-repository</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.xyoung</groupId>
+            <artifactId>maven-repository</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>
